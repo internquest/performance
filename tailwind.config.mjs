@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       screens:{
-        // 'm800':{'max':'800px'},
+        'mobile':{'max':'799px'},
+        'm900':{'max':'899px'},
         'md':{'min':'800px'}
       }
       ,

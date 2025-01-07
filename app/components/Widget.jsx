@@ -130,7 +130,7 @@ const updateleftidnetityAndTitle = () => {
 <path fillRule="evenodd" clipRule="evenodd" d="M0.46967 0.46967C0.762563 0.176777 1.23744 0.176777 1.53033 0.46967L5.53033 4.46967C5.82322 4.76256 5.82322 5.23744 5.53033 5.53033L1.53033 9.53033C1.23744 9.82322 0.762563 9.82322 0.46967 9.53033C0.176777 9.23744 0.176777 8.76256 0.46967 8.46967L3.93934 5L0.46967 1.53033C0.176777 1.23744 0.176777 0.762563 0.46967 0.46967Z" fill="currentColor"></path>
 </svg>
 <div className=" absolute top-[-.0625rem] left-[-.0625rem]">
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className='w-[1.75rem] h-[1.75rem] rotate-[-90deg]'>
                     <circle ref={circleRef} cx="14" cy="14" r="13" stroke="red" strokeDasharray="81.6814" strokeDashoffset="81.6814" strokeOpacity="1"  className="stroke-[length:0.0625rem]  fill-none  stroke-[var(--blue-fantasy)]"></circle>
                 </svg>
 </div>
