@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import SoftSkills from "./components/SoftSkills";
 import StickyCards from "./components/StickyCards";
 import Talents from "./components/Talents";
+import Details from "./components/Details";
+import Hrchalleneges from "./components/Hrchalleneges";
 
 export default function Home() {
   useEffect(() => {
@@ -36,6 +38,8 @@ export default function Home() {
       <SoftSkills/>
       <StickyCards/>
       <Talents/>
+      <Details/>
+      <Hrchalleneges/>
       {/* <Hero/> */}
        </div>
       </div>
