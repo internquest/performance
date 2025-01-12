@@ -1,19 +1,43 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
+import {motion, useMotionValueEvent,useScroll, useTransform } from "motion/react"
+import { useWindowSize } from '@uidotdev/usehooks'
 
 const Aboutdetails = () => {
+const ref=useRef(null)
+const scrollheihgt=useRef(null)
+const bar=useRef(null)
+const [scrollheight,setscrollHeight]=useState(0)
+const [barheight,setbarheight]=useState(0)
+const [scrollprogress,setscrollprogress]=useState(0)
+// const windowheihgt=useWindowSize().height
+    useEffect(()=>{
+const height=scrollheihgt.current.getBoundingClientRect().height
+const barheight=bar.current.getBoundingClientRect().height
+setscrollHeight(height)
+setbarheight(barheight)
+    },[])
+    
+    const {scrollYProgress}=useScroll({
+        target:ref,
+        offset:['start start','end end']
+    })
+    
+    useMotionValueEvent(scrollYProgress,'change',(x)=>setscrollprogress(x))
+const scrollmotionvalue=useTransform(scrollYProgress,[0,1],[0,scrollheight-barheight])
   return (
-    <section className="c-section c-section--dark c-section--dark-2 c-lock-scroll-1" data-nav-section="dark">
+    <section  className="c-section c-section--dark c-section--dark-2 c-lock-scroll-1" data-nav-section="dark">
         <div className="wrap wrap--max">
 			<div className="c-lock-scroll-cards-wrap">
         <div className="c-lock-scroll-cards-scrollbar-wrap">
-          <div className="c-lock-scroll-cards-scrollbar">
-            <div className="c-lock-scroll-cards-scrollbar-inner" style={{transform:' translateY(0px)'}}></div>
+          <div ref={scrollheihgt} className="c-lock-scroll-cards-scrollbar">
+            <motion.div ref={bar} className="c-lock-scroll-cards-scrollbar-inner" style={{y:scrollmotionvalue}}></motion.div>
           </div>
         </div>
 
-				<div className="c-lock-scroll-cards">
+				<div ref={ref} className="c-lock-scroll-cards">
 
-                <div className="c-lock-scroll-card" data-animate-section="" style={{backgroundColor: 'rgb(11, 24, 65)'}}>
+                <div className="c-lock-scroll-card" data-animate-section="" style={{backgroundColor:scrollprogress>=.333 && 'rgb(11, 24, 65)'}}>
 									<div className="c-grid items-center c-lock-scroll-card-inner" style={{opacity: 1}}>
 										<div className="c-lock-scroll-card-img col-span-10 md:col-span-6 md:col-start-2" data-animate="" data-animate-scale="0.8" >
                                         <svg className="c-illustration-ai" width="399" height="252" viewBox="0 0 399 252" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,13 +100,14 @@ const Aboutdetails = () => {
 										<div className="c-lock-scroll-card-text col-span-10 md:col-span-6 md:col-start-8">
 											<h3 className="ts-3" data-animate-title="" ><div className="title-line"><div className="title-line-inner" > A soft skills model transposable to all </div></div><div className="title-line"><div className="title-line-inner" >professional contexts </div></div></h3>
 											<div className="ts-p" data-split-articles="" data-animate-paragraph="" data-animate-delay="200" >
-												<p ><div className="line"><div className="line-inner" >Our IDEAC model (Influence, Decision, Efficiency, </div></div><div className="line"><div className="line-inner" >Agility, Collaboration) was created on a 35 key soft </div></div><div className="line"><div className="line-inner" >skills referential that impacts the current and future </div></div><div className="line"><div className="line-inner" >performance of organisations. With this learning </div></div><div className="line"><div className="line-inner" >model, assess the soft skills that really make the </div></div><div className="line"><div className="line-inner" >difference in your context.</div></div></p>
+												<div ><div className="line"><div className="line-inner" >Our IDEAC model (Influence, Decision, Efficiency, </div></div><div className="line"><div className="line-inner" >Agility, Collaboration) was created on a 35 key soft </div></div><div className="line"><div className="line-inner" >skills referential that impacts the current and future </div></div><div className="line"><div className="line-inner" >performance of organisations. With this learning </div></div><div className="line"><div className="line-inner" >model, assess the soft skills that really make the </div></div><div className="line"><div className="line-inner" >difference in your context.</div></div>
+                                                </div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-<div className="c-lock-scroll-card c-lock-scroll-card--title" data-animate-section="" style={{backgroundColor: 'rgb(11, 24, 65)'}}>
+                 <div className="c-lock-scroll-card c-lock-scroll-card--title" data-animate-section="" style={{backgroundColor: scrollprogress>=.666&&'rgb(11, 24, 65)'}}>
 									<div className="flex items-center w-full c-lock-scroll-card-inner" style={{opacity: 1}}>
 										<div className="c-lock-scroll-card-title w-full">
 											<span className="ts-eyebrow ts-indicator" data-animate="" data-animate-y="50" >PEOPLE AT THE HEART OF ASSESSMENT</span>
@@ -126,7 +151,7 @@ const Aboutdetails = () => {
 										<div className="c-lock-scroll-card-text col-span-10 md:col-span-6 md:col-start-8">
 											<h3 className="ts-3" data-animate-title="" ><div className="title-line"><div className="title-line-inner" > At the forefront of Psychometric </div></div><div className="title-line"><div className="title-line-inner" >technology </div></div></h3>
 											<div className="ts-p" data-split-articles="" data-animate-paragraph="" data-animate-delay="200" >
-												<p ><div className="line"><div className="line-inner" >PerformanSe combines 35 years of expertise, </div></div><div className="line"><div className="line-inner" >machine learning and IRT for ultra-precise tools. </div></div><div className="line"><div className="line-inner" >Our data, anonymised and hosted in France, feed </div></div><div className="line"><div className="line-inner" >algorithms which are constantly refined, offering the </div></div><div className="line"><div className="line-inner" >most predictive assessments on the market.</div></div></p>
+												<div ><div className="line"><div className="line-inner" >PerformanSe combines 35 years of expertise, </div></div><div className="line"><div className="line-inner" >machine learning and IRT for ultra-precise tools. </div></div><div className="line"><div className="line-inner" >Our data, anonymised and hosted in France, feed </div></div><div className="line"><div className="line-inner" >algorithms which are constantly refined, offering the </div></div><div className="line"><div className="line-inner" >most predictive assessments on the market.</div></div></div>
 											</div>
 										</div>
 									</div>

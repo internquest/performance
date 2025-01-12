@@ -10,6 +10,12 @@ import StickyCards from "./components/StickyCards";
 import Talents from "./components/Talents";
 import Details from "./components/Details";
 import Hrchalleneges from "./components/Hrchalleneges";
+import Carousel from "./components/Carousel";
+import AiSoftskills from "./components/AiSoftskills";
+import Aboutdetails from "./components/Aboutdetails";
+import Questions from "./components/Questions";
+import JUstCurious from "./components/JUstCurious";
+import DiscoveTalents from "./components/DiscoveTalents";
 
 export default function Home() {
   useEffect(() => {
@@ -40,6 +46,12 @@ export default function Home() {
       <Talents/>
       <Details/>
       <Hrchalleneges/>
+      <Carousel/>
+      <AiSoftskills/>
+      <Aboutdetails/>
+      <Questions/>
+      <JUstCurious/>
+      <DiscoveTalents/>
       {/* <Hero/> */}
        </div>
       </div>

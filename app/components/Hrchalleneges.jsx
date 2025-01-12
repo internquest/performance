@@ -42,7 +42,7 @@ const negbuttonsmoitonval = useTransform(cardsmoitonval, (value) => {
 // }
 
 // )
-console.log(cardsmoitonval.get());
+// console.log(cardsmoitonval.get());
 
   return (
     <section ref={containeref} className="c-section--dark-1 c-cards c-cards--5" data-animate-section style={windowwidth>799?{height: `${(cardswidth-windowwidth/2)+(windowheiht)}px`}:null}>

@@ -7,6 +7,15 @@ export default {
   ],
   theme: {
     extend: {
+      gap: {
+        '60': '3.75rem',
+      },
+      gridTemplateColumns: {
+         '14': 'repeat(14, minmax(0, 1fr))'
+      },
+      fontFamily:{
+        // geographmed:['var(--font-geograph-med)']
+      },
       screens:{
         'mobile':{'max':'799px'},
         'm900':{'max':'899px'},
