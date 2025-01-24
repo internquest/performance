@@ -18,19 +18,44 @@ const Widget = () => {
       title:"Identify the managers of tomorrow!"
     }
   ]
-
+const widgetref  = useRef(null) 
 
   const [identity, setIdentity] = useState(0);
   const intervalRef = useRef(null); // Ref to store the interval ID
   // const [title, setTitle] = useState("Title 1");
   const circleRef = useRef(null);
   const strokeDasharray = 81.6814;
+  function animateTransform(element, startValue, endValue,opacstart,opacend, duration) {
+    const startTime = performance.now();
+  
+    function step(currentTime) {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1); // Clamp progress between 0 and 1
+  
+      const currentValue = startValue + (endValue - startValue) * progress;
+      const currentValue2 = opacstart + (opacend - opacstart) * progress;
+  element.style.opacity = currentValue2;
+      element.style.transform = `scale(${currentValue})`; // Example: translateX
+  
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+  
+    requestAnimationFrame(step);
+  }
 
   useEffect(() => {
-    startInterval(); // Start the interval when the component mounts
+    const key=setTimeout(() => {
+        animateTransform(widgetref.current, .88, 1,0,1,400);
+        startInterval(); // Start the interval when the component mounts
+        animateCircle();
+    },3000)
     // updateIdentityAndTitle();
-    animateCircle();
-    return () => clearInterval(intervalRef.current); // Clear interval on unmount
+    return () => {
+      clearInterval(intervalRef.current); // Clear interval on unmount
+      clearInterval(key);
+      }
 }, []);
 
 const startInterval = () => {
@@ -100,7 +125,7 @@ const updateleftidnetityAndTitle = () => {
   }
   // console.log(identity);
   return (
-    <div className="widget">
+    <div ref={widgetref} className="widget opacity-0">
     <ul className="relative overflow-hidden w-full widgetui">
 
       {

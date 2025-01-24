@@ -46,7 +46,7 @@ const negbuttonsmoitonval = useTransform(cardsmoitonval, (value) => {
 
   return (
     <section ref={containeref} className="c-section--dark-1 c-cards c-cards--5" data-animate-section style={windowwidth>799?{height: `${(cardswidth-windowwidth/2)+(windowheiht)}px`}:null}>
-        <motion.div style={{y:cardsmoitonval}} className="c-cards-inner [will-change:transform]" >
+        <motion.div style={windowwidth>799?{y:cardsmoitonval}:null} className="c-cards-inner [will-change:transform]" >
         <motion.div className="c-cards-title wrap wrap--max" style={windowwidth>799?{x: halfnegcardsmoitonval}:null}>
 			<div className="c-grid">
 				<div className="col-span-8 md:col-span-6">

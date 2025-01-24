@@ -37,7 +37,7 @@ const scrollmotionvalue=useTransform(scrollYProgress,[0,1],[0,scrollheight-barhe
 
 				<div ref={ref} className="c-lock-scroll-cards">
 
-                <div className="c-lock-scroll-card" data-animate-section="" style={{backgroundColor:scrollprogress>=.333 && 'rgb(11, 24, 65)'}}>
+                <div className="c-lock-scroll-card mobile:!relative" data-animate-section="" style={{backgroundColor:scrollprogress>=.333 && 'rgb(11, 24, 65)'}}>
 									<div className="c-grid items-center c-lock-scroll-card-inner" style={{opacity: 1}}>
 										<div className="c-lock-scroll-card-img col-span-10 md:col-span-6 md:col-start-2" data-animate="" data-animate-scale="0.8" >
                                         <svg className="c-illustration-ai" width="399" height="252" viewBox="0 0 399 252" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +107,7 @@ const scrollmotionvalue=useTransform(scrollYProgress,[0,1],[0,scrollheight-barhe
 									</div>
 								</div>
 
-                 <div className="c-lock-scroll-card c-lock-scroll-card--title" data-animate-section="" style={{backgroundColor: scrollprogress>=.666&&'rgb(11, 24, 65)'}}>
+                 <div className="c-lock-scroll-card mobile:!relative c-lock-scroll-card--title" data-animate-section="" style={{backgroundColor: scrollprogress>=.666&&'rgb(11, 24, 65)'}}>
 									<div className="flex items-center w-full c-lock-scroll-card-inner" style={{opacity: 1}}>
 										<div className="c-lock-scroll-card-title w-full">
 											<span className="ts-eyebrow ts-indicator" data-animate="" data-animate-y="50" >PEOPLE AT THE HEART OF ASSESSMENT</span>
@@ -116,7 +116,7 @@ const scrollmotionvalue=useTransform(scrollYProgress,[0,1],[0,scrollheight-barhe
 									</div>
 								</div>
 
-			<div className="c-lock-scroll-card" data-animate-section="">
+			<div className="c-lock-scroll-card mobile:!relative" data-animate-section="">
 									<div className="c-grid items-center c-lock-scroll-card-inner" style={{opacity:1}}>
 										<div className="c-lock-scroll-card-img col-span-10 md:col-span-6 md:col-start-2" data-animate="" data-animate-scale="0.8" >
 		<svg className="c-illustration-security" width="419" height="294" viewBox="0 0 419 294" fill="none" xmlns="http://www.w3.org/2000/svg">

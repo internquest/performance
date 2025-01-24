@@ -423,7 +423,7 @@ const Footer = () => {
               >
                 <div
                   className="cookies-a"
-                  onclick="window.axeptioSDK.openCookies()"
+                //   onlick="window.axeptioSDK.openCookies()"
                 >
                   <svg
                     className="c-icon-cookies"
@@ -508,7 +508,7 @@ const Footer = () => {
             <button
               className="c-button--round"
               data-scroll-to="top"
-              fdprocessedid="utqa6s"
+            
             >
               <div className="c-button-icon">
                 <span className="c-button-icon-static">

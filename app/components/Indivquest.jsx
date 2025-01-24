@@ -4,64 +4,122 @@ import React, { useEffect, useRef, useState } from 'react'
 const Indivquest = () => {
     const [open, setOpen] = useState(false);
     const solref=useRef(null)
+    const [expanded,setexpanded]=useState(false)
+    const isMounted = useRef(false); // Track if the component has mounted
     const handleClick = () => {
 
         setOpen(!open)
     }
-    useEffect(() => {
-        // solref.current.style=solref.current.style
-        // solref.current.style.transitionDuration='0.5s'
-        if(open){
-            solref.current.classList.add('is-active')
-            solref.current.style.height = `${solref.current.firstElementChild.offsetHeight + solref.current.lastElementChild.scrollHeight}px`;
-// console.log(solref.current.firstElementChild.offsetHeight+solref.current.lastElementChild.offsetHeight);
+    function animateTransform(element, startValue, endValue, duration,open) {
+        const startTime = performance.now();
+      
+        function step(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          
+          const progress = Math.min(elapsedTime / duration, 1); // Clamp progress between 0 and 1
+          
+          const currentValue = startValue + (endValue - startValue) * progress;
+        //   console.log(currentValue);
+      
+          element.style.height = `${currentValue}px`; // Example: translateX
+      
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            console.log('Animation complete',progress);
+            setTimeout(() => {
+                element.style.removeProperty('height');
+              }, 500);
+                
+            
+            if (open) {
+                // console.log('shiav');
+                setexpanded(true)
+                element.classList.add('is-expanded');
+                // if(progress===1||progress>.95){
+                //  element.style=''   
+                // }
+            } else {
+                // console.log('fuck');
+                setexpanded(false)
+                element.classList.remove('is-expanded');
+                // element.style.removeProperty('height')
+                // element.style=''
+            }
+           
+        }     
+
 
         }
-        else{
-            // console.log(solref.current.firstElementChild.offsetHeight);
-            // console.log(open);
+      
+        requestAnimationFrame(step);
+      }
+
+
+
+
+    useEffect(() => {
+       
+        const total = solref.current.firstElementChild.offsetHeight + solref.current.lastElementChild.scrollHeight;
+        const quest=solref.current.firstElementChild.offsetHeight
+      
+        console.log(solref.current.offsetHeight);
+        if (solref) {
+            if (isMounted.current) {
+        if(open){
+            // solref.current.style.height=`${quest}px`
             
-            solref.current.style.height=`${solref.current.firstElementChild.scrollHeight}px`
-            // solref.current.style.transitionDuration=''
-            solref.current.classList.remove('is-active')
+            solref.current.classList.add('is-active')
+            // solref.current.offsetHeight;
+            animateTransform(solref.current,quest,total,50,true)
         }
+        else{
+            solref.current.classList.remove('is-active')
+            // solref.current.style.height=`${solref.current.firstElementChild.scrollHeight}px`
+            animateTransform(solref.current,total,quest,50,false)   
+        }
+    }else {
+        // Skip the animation logic on the first render
+        isMounted.current = true;
+      }
+    }
        
     },[open])
 
 
   
     
-    useEffect(() => {
-        const handleTransitionEnd = (e) => {
-            if (e.propertyName === 'height') {
-                console.log(open);
-                // console.log('Transition End:', open);
+    // useEffect(() => {
+    //     const handleTransitionEnd = (e) => {
+    //         if (e.propertyName === 'height') {
+    //             console.log(open);
+    //             // console.log('Transition End:', open);
     
-                // Clear inline styles
-                solref.current.style.transitionDuration='0s'
-                solref.current.style = '';
+    //             // Clear inline styles
+    //             solref.current.style.transitionDuration='0s'
+    //             solref.current.style = '';
                 
-                if (open) {
-                    // console.log('opes');
-                    solref.current.classList.add('is-expanded');
-                } else {
-                    // console.log('closes');
-                    // solref.current.style.transitionDuration='0s'
+    //             if (open) {
+    //                 // console.log('opes');
+    //                 solref.current.classList.add('is-expanded');
+    //             } else {
+    //                 // console.log('closes');
+    //                 // solref.current.style.transitionDuration='0s'
                     
-                    solref.current.classList.remove('is-expanded');
-                }
+    //                 solref.current.classList.remove('is-expanded');
+    //             }
                 
-            }    
-        };
+    //         }    
+    //     };
     
-        // Add the transitionend listener
-        solref.current.addEventListener('transitionend', handleTransitionEnd);
+    //     // Add the transitionend listener
+    //     solref.current.addEventListener('transitionend', handleTransitionEnd);
     
-        return () => 
-            // Cleanup the listener
-            solref.current.removeEventListener('transitionend', handleTransitionEnd);
+    //     return () => 
+    //         // Cleanup the listener
+    //         solref.current.removeEventListener('transitionend', handleTransitionEnd);
     
-    }, [open]);
+    // }, [open]);
 
 
   return (

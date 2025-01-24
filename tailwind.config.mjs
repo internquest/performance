@@ -7,11 +7,17 @@ export default {
   ],
   theme: {
     extend: {
+      margin: {
+        '80':'5rem',
+      },
       gap: {
         '60': '3.75rem',
       },
       gridTemplateColumns: {
          '14': 'repeat(14, minmax(0, 1fr))'
+      },
+      gridColumn: {
+        'span-14': 'span 14 / span 14',
       },
       fontFamily:{
         // geographmed:['var(--font-geograph-med)']

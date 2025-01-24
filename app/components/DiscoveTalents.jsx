@@ -78,7 +78,7 @@ const DiscoveTalents = () => {
                     inputMode="text"
                     autoComplete="family-name"
                     defaultValue=""
-                    fdprocessedid="a2t5cd"
+                   
                   />
                 </div>
               </div>
@@ -104,7 +104,7 @@ const DiscoveTalents = () => {
                     inputMode="text"
                     autoComplete="given-name"
                     defaultValue=""
-                    fdprocessedid="aertqs"
+                    
                   />
                 </div>
               </div>
@@ -133,7 +133,7 @@ const DiscoveTalents = () => {
                     inputMode="tel"
                     autoComplete="tel"
                     defaultValue=""
-                    fdprocessedid="xzezu"
+                 
                   />
                 </div>
               </div>
@@ -164,7 +164,7 @@ const DiscoveTalents = () => {
                     inputMode="text"
                     autoComplete="organization"
                     defaultValue=""
-                    fdprocessedid="lmajwl"
+                    
                   />
                 </div>
               </div>
@@ -189,7 +189,7 @@ const DiscoveTalents = () => {
                     className="hs-input"
                     inputMode="text"
                     defaultValue=""
-                    fdprocessedid="u1zdyh"
+                
                   />
                 </div>
               </div>
@@ -215,7 +215,7 @@ const DiscoveTalents = () => {
                     inputMode="email"
                     autoComplete="email"
                     defaultValue=""
-                    fdprocessedid="lxbwff"
+                
                   />
                 </div>
               </div>
@@ -243,7 +243,7 @@ const DiscoveTalents = () => {
                     inputMode="text"
                     autoComplete="country-name"
                     defaultValue=""
-                    fdprocessedid="wsr0dm"
+                    
                   />
                 </div>
               </div>
@@ -269,7 +269,7 @@ const DiscoveTalents = () => {
                     inputMode="text"
                     autoComplete="address-level2"
                     defaultValue=""
-                    fdprocessedid="wdmru"
+                  
                   />
                 </div>
               </div>

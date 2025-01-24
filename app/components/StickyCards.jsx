@@ -1,15 +1,20 @@
 import React from 'react'
 import RevealButton from './RevealButton'
-
+// import { windowwidth } from './SoftSkills'
+import { windowwidth } from '../utiliity/windowsize'
 const StickyCards = () => {
+  const width=windowwidth()
   return (
     <div className='relative c-cards-wrap bg-white'>
-        <section className="c-cards c-cards--1" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark" >
+        <section className="c-cards c-cards--1 mobile:!relative" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark" >
 		<div className="wrap wrap--max">
 			<div className="c-grid items-center">
 				<div className="col-span-10 md:col-span-7 mobile:order-2 mobile:mt-80 relative">
 					<h2 className="ts-eyebrow ts-indicator" data-animate="">Recruiting</h2>
 					<div className="ts-body--xl" data-animate-paragraph="" data-animate-delay="100" data-split-articles="" >
+            {
+width>799?
+            
 						<div>
                             <div className="line"><div className="line-inner">With our psychometric tools and our </div></div>
                             <div className="line"><div className="line-inner">development centers, support your </div></div>
@@ -17,6 +22,9 @@ const StickyCards = () => {
                             <div className="line"><div className="line-inner">encourage internal mobility and retain all </div></div>
                             <div className="line"><div className="line-inner">your employees.</div></div>
                             </div>
+                            :
+                            <div ><div className="line"><div className="line-inner">With our psychometric tools and </div></div><div className="line"><div className="line-inner">our development centers, </div></div><div className="line"><div className="line-inner">support your talents in their </div></div><div className="line"><div className="line-inner">career management, encourage </div></div><div className="line"><div className="line-inner">internal mobility and retain all </div></div><div className="line"><div className="line-inner">your employees.</div></div></div>
+}
 					</div>
 					{/* <a data-animate="" data-animate-y="50" data-animate-delay="300" href="https://www.performanse.com/en/your-needs/recruiting/" className="c-button c-button--icon-hover c-button--ts-1 c-button--blue c-button--hover-cyan" >
   <span className="c-button-bg">
@@ -143,7 +151,7 @@ const StickyCards = () => {
 	</section>
 
 
-    <section className="c-cards c-cards--1" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark">
+    <section className="c-cards c-cards--1 mobile:!relative" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark">
 		<div className="wrap wrap--max">
 			<div className="c-grid items-center">
 				<div className="col-span-10 md:col-span-7 mobile:order-2 mobile:mt-80 relative">
@@ -257,7 +265,7 @@ const StickyCards = () => {
 	</section>
 
 
-    <section className="c-cards c-cards--1" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark">
+    <section className="c-cards c-cards--1 mobile:!relative" data-animate-section="" data-animate-margin="-35% 0% -35% 0%" data-nav-section="dark">
 		<div className="wrap wrap--max">
 			<div className="c-grid items-center">
 				<div className="col-span-10 md:col-span-7 mobile:order-2 mobile:mt-80 relative">
