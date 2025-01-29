@@ -1,31 +1,42 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect,useState,useRef } from 'react'
 import Hero from '../components/aboutUs/Hero'
 import BeyondPersonality from '../components/science/BeyondPersonality'
 import BeyondPoints from '../components/science/BeyondPoints'
 import { Cardo } from 'next/font/google'
 import Cards from '../components/science/Cards'
+import Navbar from '../components/Navbar'
+import Loader from '../components/Loader'
 
 const page = () => {
-    useEffect(() => {
+  const locomotiveScrollRef = useRef(null);
+  
+  useEffect(() => {
 
-        (
-    
-          async () => {
-    
-            const LocomotiveScroll = (await import('locomotive-scroll')).default
-    
-            const locomotiveScroll = new LocomotiveScroll();
-    
-          }
-    
-        )()
-    
-      })
+    (
 
+      async () => {
+
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+
+         locomotiveScrollRef.current = new LocomotiveScroll();
+// console.log(locomotiveScrollRef.current);
+
+      }
+
+    )()
+    return () => {
+      if (locomotiveScrollRef.current) {
+          locomotiveScrollRef.current.destroy();
+      }
+
+  }
+
+  }, []);
       const scienthero=['A predictable assessment of','human potential']
       const Aitricks=['An ethical alliance between','AI, psychology, and the','workplace to provide you','with the fairest and most','predictive assessments']
   return (
+    <>
     <main>
         <div>
             <div>
@@ -1094,6 +1105,9 @@ const page = () => {
             </div>
         </div>
     </main>
+    <Navbar lenisref={locomotiveScrollRef}/>
+    
+    </>
   )
 }
 

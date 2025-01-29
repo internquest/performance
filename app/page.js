@@ -48,7 +48,7 @@ export default function Home() {
 
   }, []);
 
-  console.log(loading);
+  // console.log(loading);
   
   return (
     <>
@@ -73,7 +73,7 @@ export default function Home() {
       </div>
     </main>
     <Navbar lenisref={locomotiveScrollRef}/>
-    <Loader loading={loading} setLoading={setLoading} />
+    {/* <Loader loading={loading} setLoading={setLoading} /> */}
     </>
   );
 }

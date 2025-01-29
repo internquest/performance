@@ -3102,6 +3102,17 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   bottom: 0;
   right: 8.125rem;
 }
+@media (max-width: 999px) {
+  .c-footer-illustration {
+      right: 5%;
+  }
+}
+@media (max-width: 799px) {
+  .c-footer-illustration {
+      bottom: 20.625rem;
+      right: .3125rem;
+  }
+}
 .c-footer-illustration svg {
   width: 23.25rem;
   height: 15.1875rem;
@@ -3114,6 +3125,13 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   letter-spacing: -.04em;
   color: var(--blue-highlight);
   margin-top: .1875rem;
+}
+@media (max-width: 799px) {
+  .c-footer-ul--main {
+      font-size: 1.875rem;
+      line-height: 1.8;
+      margin-bottom: 2.1875rem;
+  }
 }
 .c-footer-menus {
   flex: 1;
@@ -3132,6 +3150,13 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   line-height: .81481;
   margin-top: 1.25rem;
 }
+@media (max-width: 799px) {
+  .c-footer h3 {
+      margin-top: 3.4375rem;
+      font-size: 1.0625rem;
+      line-height: 1.41176;
+  }
+}
 .c-footer-ul--sub {
   --link-hover-color: var(--white);
   margin-top: 2rem;
@@ -3141,6 +3166,13 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   display: flex;
   flex-direction: column;
   gap: .75rem;
+}
+@media (max-width: 799px) {
+  .c-footer-ul--sub {
+      margin-top: 1.25rem;
+      font-size: .6875rem;
+      line-height: 2.36364;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
 .c-footer a {
@@ -3159,6 +3191,13 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   line-height: 1.38462;
   letter-spacing: .02em;
   color: var(--blue-patch);
+}
+@media (max-width: 799px) {
+  .c-footer-bottom {
+      padding-top: 23.4375rem;
+      font-size: .6875rem;
+      line-height: 1.45455;
+  }
 }
 .c-footer-bottom {
   position: relative;
@@ -3234,7 +3273,35 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
 }
 
 
+/* page transition  */
 
+
+.c-page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+.c-page-overlay-layer-1 {
+  transform-origin: top;
+  background-color: var(--blue-mysterious);
+  opacity: 0;
+}
+.c-page-overlay-layer-2 {
+  background: var(--blue-mysterious);
+  transform: scaleY(0);
+}
+
+.c-page-overlay-layer-1, .c-page-overlay-layer-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 
 

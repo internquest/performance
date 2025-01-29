@@ -41,17 +41,18 @@ const key=setInterval(() => {
 }, 3000);
 return () => clearInterval(key);
 },[])
-useEffect(() => {
-  // console.log(no);
-  clearInterval(intervalref.current);
-  
-  if(no)
-    {
-      // Clear all timeouts when needed
 const clearAllTimeouts = () => {
   timeoutIds.forEach(id => clearTimeout(id)); // Clear each timeout
   timeoutIds.length = 0; // Reset the array
 };
+useEffect(() => {
+  // console.log(no);
+      clearInterval(intervalref.current);
+  
+  if(no)
+    {
+      // Clear all timeouts when needed
+
 clearAllTimeouts()
 
       const container=document.getElementsByClassName('c-title-part')[no-1]

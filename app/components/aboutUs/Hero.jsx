@@ -4,7 +4,7 @@ import Ract from 'react'
 
 const Hero = ({para,identifier,svg,text}) => {
     // const pathName=usePathname()
-    console.log(para);
+    // console.log(para);
     
   return (
    

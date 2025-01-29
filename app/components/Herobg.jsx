@@ -1,8 +1,9 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Hero from './Hero'
 
-const Herobg = ({loading}) => {
+const Herobg = () => {
+  const [loading,setLoading]=useState(true)
   const containref=useRef(null)
   const firstpath=useRef(null)
   // const secondpath=useRef(null)
@@ -41,6 +42,15 @@ const Herobg = ({loading}) => {
     requestAnimationFrame(step);
   }
   
+useEffect(() => {
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+}, []);
+
+
+
+
   useEffect(() => {
     let interval
     if(!loading){

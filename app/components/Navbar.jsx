@@ -2,12 +2,14 @@
 import { useMotionValueEvent, useScroll } from 'motion/react';
 import React, { useEffect, useRef, useState } from 'react'
 import MEnuContent from './MEnuContent';
+import { usePathname } from 'next/navigation';
 // import { locomotiveScrollRef } from '../page';
 const Navbar = ({lenisref}) => {
     const [open, setOpen] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const { scrollY } = useScroll()
+    const path=usePathname()
 const navmenu=useRef(null)
 const menucontext=useRef(null)
 const isMounted = useRef(false); // Track if the component has mounted
@@ -80,6 +82,16 @@ const isMounted = useRef(false); // Track if the component has mounted
           }
       }, [open]); // Run whenever `open` changes
     
+
+useEffect(() => {
+   navmenu.current.style.transform="translateX(102%)"
+  navmenu.current.firstElementChild.style.transform="translateX(-50%)"
+  menucontext.current.style.transform="translateX(0%)"
+  // animateTransform(bg, 0, -50, 20) // Animate from 102% to 0%
+  // animateTransform(myDiv, 0, 102, 20); // Animate from 0% to 102%
+  // animateTransform(menucontext.current, 0, -50, 20) 
+},[path])
+
 
     // console.log(scr);
     // document.addEventListener('wheel', (event) => {
@@ -474,7 +486,7 @@ const isMounted = useRef(false); // Track if the component has mounted
         </a>
       </div>
     </div>
-    <MEnuContent navmenu={navmenu} menucontext={menucontext} open={open}/>
+    <MEnuContent navmenu={navmenu} menucontext={menucontext} open={open} setOpen={setOpen}/>
    
     <button onClick={()=>handleCloseClick()} className="c-button--round c-nav-menu-close">
       <svg

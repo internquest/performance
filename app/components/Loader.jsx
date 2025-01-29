@@ -89,7 +89,7 @@ const [times,setTimes]=useState(0)
       useEffect(() => {
         
         if(times===2){
-          setLoading(false)
+          // setLoading(false)
           animateTransform(loader.current, 1, 0, 2000);
           animateTransform(loaderlogo.current, 1, 0, 400);
           animatescalndopac(iconwrapper.current,1,0,1,.85,400)

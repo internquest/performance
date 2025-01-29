@@ -1,7 +1,11 @@
 'use client'
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react'
+import LinkTransition from './LinkTransition';
 
-const MEnuContent = ({menucontext,open,navmenu}) => {
+
+
+const MEnuContent = ({menucontext,open,navmenu,setOpen}) => {
   const locomotiveScroll=useRef(null)
     useEffect(() => {
         // menucontext.current.addEventListener('scroll', (event) => {
@@ -13,7 +17,7 @@ const MEnuContent = ({menucontext,open,navmenu}) => {
             // Create a new Lenis instance for the menu contextz
         ( 
             async () => {
-                console.log('shiva');
+                // console.log('shiva');
                 
           const LocomotiveScroll =  (await import('locomotive-scroll')).default
                locomotiveScroll.current = new LocomotiveScroll()
@@ -350,8 +354,10 @@ const MEnuContent = ({menucontext,open,navmenu}) => {
                 </a>
               </li>
               <li className="c-nav-menu-content-li">
-                <a
-                  href="https://www.performanse.com/en/about-us/"
+                <LinkTransition
+                open={open}
+                setOpen={setOpen}
+                  href="/about-us/"
                   className="c-nav-menu-content-a"
                 >
                   <span className="c-nav-menu-content-a-text">
@@ -359,11 +365,13 @@ const MEnuContent = ({menucontext,open,navmenu}) => {
                       About Us
                     </span>
                   </span>
-                </a>
+                </LinkTransition>
               </li>
               <li className="c-nav-menu-content-li">
-                <a
-                  href="https://www.performanse.com/en/science-and-innovation/"
+                <LinkTransition
+                open={open}
+                setOpen={setOpen}
+                  href="/science-and-innovation/"
                   className="c-nav-menu-content-a"
                 >
                   <span className="c-nav-menu-content-a-text">
@@ -371,7 +379,7 @@ const MEnuContent = ({menucontext,open,navmenu}) => {
                       Science &amp; Innovation
                     </span>
                   </span>
-                </a>
+                </LinkTransition>
               </li>
             </ul>
             <ul className="c-nav-menu-content-ul c-nav-menu-content-ul--sub">

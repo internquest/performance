@@ -25,7 +25,7 @@ const OurPillars = () => {
           data-animate-delay="200"
           style={{}}
         >
-          <p style={{}}>
+          <div style={{}}>
             <div className="line">
               <div className="line-inner" style={{}}>
                 At PerformanSe, “Trust in people” is a value upheld and woven into the practice of
@@ -47,7 +47,7 @@ const OurPillars = () => {
             <div className="line">
               <div className="line-inner" style={{}}>ecology of the mind.</div>
             </div>
-          </p>
+          </div>
         </div>
       </div>
       <div

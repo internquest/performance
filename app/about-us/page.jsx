@@ -1,29 +1,59 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Hero from '../components/aboutUs/Hero'
 import Aboutdetails from '../components/Aboutdetails'
 import OurPillars from '../components/aboutUs/OurPillars'
+import Navbar from '../components/Navbar'
+import Loader from '../components/Loader'
+import { windowwidth } from '../utiliity/windowsize'
 
 const page = () => {
+  const locomotiveScrollRef = useRef(null);
+  
+    // useEffect(() => {
+
+    //     (
+    
+    //       async () => {
+    
+    //         const LocomotiveScroll = (await import('locomotive-scroll')).default
+    
+    //         const locomotiveScroll = new LocomotiveScroll();
+    
+    //       }
+    
+    //     )()
+    
+    //   })
+
+
     useEffect(() => {
 
-        (
-    
-          async () => {
-    
-            const LocomotiveScroll = (await import('locomotive-scroll')).default
-    
-            const locomotiveScroll = new LocomotiveScroll();
-    
-          }
-    
-        )()
-    
-      })
-const abouthero=['The art of assessing soft','skills']
+      (
+  
+        async () => {
+  
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+  
+           locomotiveScrollRef.current = new LocomotiveScroll();
+  // console.log(locomotiveScrollRef.current);
+  
+        }
+  
+      )()
+      return () => {
+        if (locomotiveScrollRef.current) {
+            locomotiveScrollRef.current.destroy();
+        }
+  
+    }
+  
+    }, []);
+const abouthero=windowwidth()>799 ?['The art of assessing soft','skills']:['The art of assessing','soft skills']
 
 
   return (
+    <>
     <main>
         <div>
             <div>
@@ -38,6 +68,10 @@ const abouthero=['The art of assessing soft','skills']
             </div>
         </div>
     </main>
+
+    <Navbar lenisref={locomotiveScrollRef}/>
+    
+    </>
   )
 }
 
