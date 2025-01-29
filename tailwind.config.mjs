@@ -23,9 +23,10 @@ export default {
         // geographmed:['var(--font-geograph-med)']
       },
       screens:{
-        'mobile':{'max':'799px'},
         'm900':{'max':'899px'},
-        'md':{'min':'800px'}
+        'mobile':{'max':'799px'},
+        'md':{'min':'800px'},
+        'lg':{'min':'1000px'}
       }
       ,
       colors: {

@@ -1018,6 +1018,13 @@ body {
     letter-spacing: .07em;
     text-transform: uppercase;
     font-weight: 500;
+    flex: none;
+}
+@media (max-width: 799px) {
+  
+  .widgetlispan{
+    font-size: .625rem;
+}
 }
 .widgetlispan:after{
   content: "";
@@ -1649,34 +1656,11 @@ body {
   justify-content: center;
   position: relative;
 }
-.c-button .c-button-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform .3s ease-out;
-  transform: translateY(0);
-  background-color: var(--button-bg-color);
-  border-radius: var(--button-border-radius);
-}
+
 @media (hover: hover) and (pointer: fine) {
   .c-button-bg {
       transition: transform .8s var(--expo-out);
       overflow: hidden;
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .c-button-bg-hover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--button-border-radius);
-      background-color: var(--button-bg-hover-color, rgba(255, 255, 255, 1));
-      transform: translateY(110%);
-      transition: transform .8s var(--expo-out);
   }
 }
 
@@ -2799,28 +2783,8 @@ body {
   font-size: .75rem;
 }
 }
-.c-button .c-button-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform .3s ease-out;
-  transform: translateY(0);
-  background-color: var(--button-bg-color);
-  border-radius: var(--button-border-radius);
-}
-.c-button-bg-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--button-border-radius);
-  background-color: var(--button-bg-hover-color, rgba(255, 255, 255, 1));
-  transform: translateY(110%);
-  transition: transform .8s var(--expo-out);
-}
+
+
 .c-button--ts-2 .c-button-text {
   height: .875rem;
 }
@@ -3099,17 +3063,7 @@ textarea.c-form-input, .hs-form .hs-form-field textarea {
   overflow: hidden;
 }
 }
-.c-button .c-button-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform .3s ease-out;
-  transform: translateY(0);
-  background-color: var(--button-bg-color);
-  border-radius: var(--button-border-radius);
-}
+
 .hbspt-form input[type=submit] {
   background: var(--form-button-bg-color);
   color: var(--form-button-text-color);
